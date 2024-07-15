@@ -18,25 +18,52 @@
         </nav>
     </header>
     <main>
-        <section id="info">
-            <h1>Welcome to My Fantasy Vibe</h1>
-            <p>Transforming real life into a game/fantasy experience. Follow my journey as I find magical items and share their stories.</p>
-        </section>
-        <section id="findings">
-            <h2>My Findings</h2>
-            <div class="card-container">
-                <div class="card">
-                    <div class="card-front">
-                        <p>Click to reveal</p>
+        <div class="container">
+            <aside class="sidebar">
+                <div class="character-profile">
+                    <img src="path/to/character.jpg" alt="Character Image" class="character-image">
+                    <h2 class="character-name">Character Name</h2>
+                    <div class="status">
+                        <p>HP: 50</p>
+                        <p>MP: 10</p>
+                        <p>Level: 1</p>
+                        <button class="dropdown-button">Detailed Status</button>
+                        <div class="detailed-status">
+                            <p>STR: 2</p>
+                            <p>DEX: 2</p>
+                            <p>INT: 2</p>
+                        </div>
                     </div>
-                    <div class="card-back">
-                        <img src="path/to/image.jpg" alt="Finding Image">
-                        <p>Critical hit to a wooden stick</p>
+                    <div class="condition">
+                        <p>Condition: It is healthy!</p>
+                        <p>Mood: Feeling happy.</p>
+                        <p>Thoughts: What's next?</p>
                     </div>
                 </div>
-                <!-- Repeat .card structure for more cards -->
-            </div>
-        </section>
+            </aside>
+            <section class="content">
+                <section id="info">
+                    <h1>Welcome to My Fantasy Vibe</h1>
+                    <p>Transforming real life into a game/fantasy experience. Follow my journey as I find magical items and share their stories.</p>
+                </section>
+                <section id="findings">
+                    <h2>My Findings</h2>
+                    <div class="card-container">
+                        <div class="card">
+                            <div class="card-front">
+                                <p>Click to reveal</p>
+                            </div>
+                            <div class="card-back">
+                                <img src="path/to/image.jpg" alt="Finding Image">
+                                <p>Critical hit to a wooden stick</p>
+                            </div>
+                        </div>
+                        <!-- Repeat .card structure for more cards -->
+                    </div>
+                </section>
+            </section>
+        </div>
     </main>
+    <script src="scripts.js"></script>
 </body>
 </html>

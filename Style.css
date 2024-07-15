@@ -1,3 +1,4 @@
+/* Base Styles */
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f0f0f0;
@@ -31,17 +32,78 @@ nav a {
 }
 
 main {
+    display: flex;
     padding: 2rem;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+.sidebar {
+    width: 20%;
+    padding: 1rem;
+    background-color: #e0d7c3;
+    border-right: 2px solid #c0b79a;
+}
+
+.content {
+    width: 80%;
+    padding: 1rem;
+}
+
+.character-profile {
     text-align: center;
 }
 
-#info h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+.character-image {
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid #c0b79a;
 }
 
-#findings {
-    margin-top: 2rem;
+.character-name {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+    color: #444;
+}
+
+.status {
+    text-align: left;
+    margin: 1rem 0;
+    background-color: #fff8e1;
+    padding: 1rem;
+    border-radius: 10px;
+    border: 2px solid #c0b79a;
+}
+
+.status p {
+    margin: 0.5rem 0;
+}
+
+.dropdown-button {
+    background-color: #c0b79a;
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.detailed-status {
+    display: none;
+    margin-top: 0.5rem;
+}
+
+.condition {
+    text-align: left;
+    margin: 1rem 0;
+    background-color: #fff8e1;
+    padding: 1rem;
+    border-radius: 10px;
+    border: 2px solid #c0b79a;
 }
 
 .card-container {
@@ -101,4 +163,47 @@ main {
 
 .card:hover div {
     transform: rotateY(180deg);
+}
+
+/* Desktop Styles */
+@media (min-width: 768px) {
+    body {
+        padding: 0 2rem;
+    }
+
+    header {
+        padding: 1rem 2rem;
+    }
+
+    main {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    nav ul {
+        justify-content: flex-start;
+    }
+
+    nav li {
+        margin: 0 2rem;
+    }
+
+    #info h1 {
+        font-size: 3rem;
+    }
+
+    .card-container {
+        gap: 3rem;
+    }
+
+    .card {
+        width: 250px;
+        height: 350px;
+    }
+}
+
+/* Dropdown Functionality */
+.dropdown-button:focus + .detailed-status,
+.detailed-status:hover {
+    display: block;
 }
