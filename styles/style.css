@@ -15,25 +15,14 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 10px; /* Minimal padding at the top */
 }
 
-.photo-container {
-    width: 90%; /* Slight padding around the image */
-    padding-top: 90%; /* Aspect ratio trick for square */
-    position: relative;
-    display: flex;
-    justify-content: center;
-}
-
-.photo-container img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures the image covers the container, maintaining aspect ratio */
-    border-radius: 10px; /* Optional: Adds some rounding to the corners */
+.character-photo {
+    width: 90%; /* Slightly less than full width to allow for padding */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 200px; /* Maximum size to keep it square */
+    max-height: 200px; /* Maximum size to keep it square */
+    margin-bottom: 20px; /* Space below the photo */
 }
 
 .main-content {
