@@ -20,13 +20,19 @@ body {
 
 .photo-container {
     width: 90%; /* Slight padding around the image */
+    padding-top: 90%; /* Aspect ratio trick for square */
+    position: relative;
     display: flex;
     justify-content: center;
 }
 
 .photo-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: auto; /* Maintain aspect ratio */
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the container, maintaining aspect ratio */
     border-radius: 10px; /* Optional: Adds some rounding to the corners */
 }
 
