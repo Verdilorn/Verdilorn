@@ -18,11 +18,20 @@ body {
 }
 
 .character-photo {
-    width: 90%; /* Slightly less than full width to allow for padding */
+    width: 98%; /* Slightly less than full width to allow for padding */
     height: auto; /* Maintain aspect ratio */
     max-width: 200px; /* Maximum size to keep it square */
     max-height: 200px; /* Maximum size to keep it square */
     margin-bottom: 20px; /* Space below the photo */
+}
+
+.demographic-section {
+    width: 100%; /* Full width of the container */
+    padding: 0 5px; /* Minimal padding left and right */
+}
+
+.demographic-section p {
+    margin: 5px 0; /* Minimal margin to separate the lines */
 }
 
 .main-content {
