@@ -4,5 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     dropdownButton.addEventListener('click', () => {
         detailedStatus.style.display = detailedStatus.style.display === 'block' ? 'none' : 'block';
+        dropdownButton.classList.toggle('active');
     });
 });
