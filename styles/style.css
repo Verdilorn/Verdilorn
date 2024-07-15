@@ -15,19 +15,24 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 10px; /* Minimal padding at the top */
 }
 
 .photo-container {
-    width: 100%;
+    width: 90%; /* Slight padding around the image */
     display: flex;
     justify-content: center;
-    padding-bottom: 20px; /* Padding around the photo */
 }
 
-.character-photo {
+.photo-container img {
     width: 100%;
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px; /* Optional: Adds some rounding to the corners of the image */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Optional: Adds a shadow for better visibility */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional: Adds some rounding to the corners */
+}
+
+.main-content {
+    width: 83.34%; /* Remaining screen width */
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
 }
