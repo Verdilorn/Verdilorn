@@ -1,94 +1,22 @@
-/* Base Styles */
 body {
-    font-family: 'Courier New', Courier, monospace;
-    background-color: #f0f0f0;
-    color: #333;
     margin: 0;
     padding: 0;
+    font-family: 'Courier New', Courier, monospace;
     display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
-header {
-    background-color: #333;
+.left-container {
+    background-color: #2e2e2e; /* Blackish color */
+    width: 16.66%; /* 1/6 of the screen width */
+    height: 100vh; /* Full height of the viewport */
     color: white;
-    padding: 1rem;
-    width: 100%;
-    text-align: center;
-    font-size: 2rem;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-.container {
-    display: flex;
-    width: 100%;
-    max-width: 1200px;
-    margin: 2rem;
-}
-
-.sidebar {
-    width: 20%;
-    padding: 1rem;
-    background-color: #e0d7c3;
-    border: 2px solid #c0b79a;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.character-profile {
-    text-align: center;
-}
-
-.character-image {
-    width: 100%;
-    border-radius: 10px;
-    border: 2px solid #c0b79a;
-}
-
-.character-name {
-    font-size: 1.5rem;
-    margin: 0.5rem 0;
-    color: #444;
-}
-
-.status {
-    text-align: left;
-    margin: 1rem 0;
-    background-color: #fff8e1;
-    padding: 1rem;
-    border-radius: 10px;
-    border: 2px solid #c0b79a;
-}
-
-.status p {
-    margin: 0.5rem 0;
-}
-
-.dropdown-button {
-    background-color: #c0b79a;
-    color: white;
-    border: none;
-    padding: 0.5rem;
-    margin-top: 0.5rem;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.detailed-status {
-    display: none;
-    margin-top: 0.5rem;
-}
-
-.condition {
-    text-align: left;
-    margin: 1rem 0;
-    background-color: #fff8e1;
-    padding: 1rem;
-    border-radius: 10px;
-    border: 2px solid #c0b79a;
-}
-
-/* Dropdown Button Functionality */
-.dropdown-button.active + .detailed-status {
-    display: block;
+.main-content {
+    width: 83.34%; /* Remaining screen width */
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
 }
