@@ -11,17 +11,127 @@
         <img src="images/char.jpg" alt="Character Photo" class="character-photo">
         
         <div class="demographic-section">
-            <p>Name: <!-- Add Name here --></p>
-            <p>Level: <!-- Add Level here --></p>
-            <p>Health: <!-- Add Health here --></p>
-            <p>Mana: <!-- Add Mana here --></p>
-            <p>Strength: <!-- Add Strength here --></p>
-            <p>Intelligence: <!-- Add Intelligence here --></p>
+            <p>Name: Dol-Mung</p>
+            <p>Level: 1</p>
+            <p>Health:</p>
+            <div class="health-bar-container">
+                <span class="bar-text" id="health-text">50/50</span>
+                <div class="health-bar" id="health-bar"></div>
+            </div>
+            <p>Mana:</p>
+            <div class="mana-bar-container">
+                <span class="bar-text" id="mana-text">10/10</span>
+                <div class="mana-bar" id="mana-bar"></div>
+            </div>
         </div>
-        <!-- Additional content for the left container will go here -->
+
+        <div class="icon-container">
+            <img src="images/home.png" alt="Home Icon" class="icon" id="home-icon">
+            <img src="images/index.png" alt="Index Icon" class="icon" id="index-icon">
+            <img src="images/map.png" alt="Map Icon" class="icon" id="map-icon">
+        </div>
     </div>
-    <div class="main-content">
-        <!-- Main content of the overview page will go here -->
+    
+    <!-- Main Content for Home Page -->
+    <div class="main-content" id="home-page">
+        <div class="intro-container" id="intro-container">
+            <p class="intro-text">Welcome to this website!!! Make decisions and explore the world.</p>
+            <button class="start-button" id="start-button">Start</button>
+        </div>
+
+        <div class="scenario-container" id="scenario-container" style="display: none;">
+            <div class="home-card">
+                <img src="" alt="Scenario" class="scenario-image" id="scenario-image">
+            </div>
+            <p class="scenario-text" id="scenario-text"></p> <!-- Moved here -->
+            <div class="action-buttons">
+                <button class="withdraw-button" id="withdraw-button">Withdraw</button>
+                <button class="proceed-button" id="proceed-button">Proceed</button>
+                <button class="restart-button" id="restart-button" style="display: none;">Restart</button> <!-- New Restart button -->
+            </div>
+        </div>
+               
     </div>
+
+    <!-- Main Content for Map Page -->
+    <div class="main-content" id="map-page" style="display: none;">
+        <div class="loading-container" id="loading-container">
+            <img src="" alt="Loading Card" class="loading-image" id="loading-image">
+        </div>
+        <p class="loading-text" id="loading-text" style="display:none;"></p> <!-- Loading Text -->
+        <div class="card" id="map-card" style="display: none;">
+            <img src="" alt="Map Card" class="map-card-image" id="map-card-image">
+        </div>
+        <p class="map-text" id="map-text" style="display: none;"></p> <!-- New map text element outside of card -->
+        <button class="continue-button" id="continue-button" style="display: none;">Continue</button>
+    </div>
+
+    <!-- Main Content for Collection Page -->
+    <div class="main-content" id="collection-page" style="display: none;">
+        <div class="card-grid" id="card-grid">
+            <!-- Card slots will be dynamically generated here -->
+        </div>
+    </div>
+
+<!-- Popup for larger card view -->
+<div class="card-popup-overlay" id="card-popup-overlay">
+    <div class="card-popup-box">
+        <div class="card-popup-inner">
+            <div class="card-popup-front">
+                <img src="" alt="Card Popup" id="card-popup-image">
+            </div>
+            <div class="card-popup-back">
+                <div class="back-image-container">
+                    <img src="" alt="Card Popup Back Image" id="card-popup-back-image">
+                </div>
+                <div class="card-description" id="card-description">
+                    <!-- Description goes here -->
+                </div>
+                <div class="meta-description" id="meta-description">
+                    <!-- Meta-description goes here -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+    <!-- Right top menu setting-->
+    <div class="menu-icon">
+        <div class="menu-icon-bars" id="menu-icon"></div>
+        <div class="dropdown-menu" id="dropdown-menu">
+            <a href="#links" id="links-item">Links</a>
+            <a href="#support" id="support-item">Support</a>
+            <!-- Add social media links here, initially hidden -->
+            <a href="https://www.instagram.com/Verdilorn" target="_blank" class="social-link" style="display: none;">Instagram</a>
+            <a href="https://www.youtube.com/@Verdilorn" target="_blank" class="social-link" style="display: none;">YouTube</a>
+        </div>
+    </div>
+
+    
+    <!-- Popup message box -->
+    <div class="popup-overlay" id="popup-overlay">
+        <div class="popup-box">
+            <span class="close-btn" id="close-btn">&times;</span>
+            <div class="popup-tabs">
+                <button class="tab-button active" id="introduction-tab">Introduction</button>
+                <button class="tab-button" id="notice-tab">Notice</button>
+                <button class="tab-button" id="updates-tab">Updates</button>
+            </div>
+            <div class="popup-text active" id="introduction-text">
+                <p>Welcome to this website! Here, you can navigate different functions and enjoy your time.</p>
+            </div>
+            <div class="popup-text" id="notice-text">
+                <p>This is a sample notice that announces upcoming stuff!</p>
+            </div>
+            <div class="popup-text" id="updates-text">
+                <p>0.0.1: We have launched this website!</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="scripts/main.js"></script>
 </body>
 </html>

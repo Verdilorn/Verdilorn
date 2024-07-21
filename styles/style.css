@@ -3,6 +3,88 @@ body {
     padding: 0;
     font-family: 'Courier New', Courier, monospace;
     display: flex;
+    height: 100vh;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+/* Button Design */
+.start-button, .continue-button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #2e2e2e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: absolute; /* Position the button absolutely within the container */
+    bottom: 150px; /* Position 150px from the bottom */
+    left: 50%;
+    transform: translateX(-50%); /* Center the button horizontally */
+}
+
+.start-button:hover, .continue-button:hover {
+    background-color: #444;
+}
+
+.restart-button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #2e2e2e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 10px;
+}
+
+.restart-button:hover {
+    background-color: #444;
+}
+
+.withdraw-button, .proceed-button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #2e2e2e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 10px;
+}
+
+.withdraw-button:hover, .proceed-button:hover {
+    background-color: #444;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    position: absolute; /* Position the buttons absolutely within the container */
+    bottom: 120px; /* Adjust bottom position as needed */
+    left: 50%;
+    transform: translateX(-50%); /* Center the buttons horizontally */
+}
+
+.tab-button {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #2e2e2e;
+    color: white;
+    border: none;
+    border-radius: 5px 5px 0 0;
+    transition: background-color 0.3s;
+    margin-right: 5px;
+}
+
+.tab-button:hover {
+    background-color: #444;
+}
+
+.tab-button.active {
+    background-color: #444;
 }
 
 .left-container {
@@ -15,28 +97,455 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative; /* To position the icons */
+    flex-shrink: 0; /* Prevent shrinking */
 }
 
 .character-photo {
-    width: 98%; /* Slightly less than full width to allow for padding */
+    width: 100%; /* Full width of the container */
     height: auto; /* Maintain aspect ratio */
-    max-width: 200px; /* Maximum size to keep it square */
-    max-height: 200px; /* Maximum size to keep it square */
+    max-width: 250px; /* Maximum size to keep it square */
+    max-height: 250px; /* Maximum size to keep it square */
     margin-bottom: 20px; /* Space below the photo */
 }
 
 .demographic-section {
     width: 100%; /* Full width of the container */
-    padding: 0 5px; /* Minimal padding left and right */
+    max-width: 250px; /* Maximum width to match the photo */
+    padding: 0; /* No padding needed */
+    box-sizing: border-box;
 }
 
 .demographic-section p {
     margin: 5px 0; /* Minimal margin to separate the lines */
+    text-align: left; /* Align text to the left */
+}
+
+.health-bar-container, .mana-bar-container {
+    width: 100%;
+    background-color: #444; /* Dark background for the bars */
+    border-radius: 5px;
+    margin: 5px 0 10px 0; /* Spacing around the bars */
+    position: relative;
+    height: 20px; /* Set height to match the bars */
+}
+
+.health-bar, .mana-bar {
+    height: 100%;
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.health-bar {
+    background-color: #ff4d4d; /* Red color for health bar */
+}
+
+.mana-bar {
+    background-color: #4d94ff; /* Blue color for mana bar */
+}
+
+.bar-text {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    line-height: 20px; /* Match the height of the bars */
+    top: 0;
+    left: 0;
+    z-index: 1; /* Ensure the text is above the bars */
 }
 
 .main-content {
     width: 83.34%; /* Remaining screen width */
-    height: 100vh;
+    height: 100vh; /* Full height of the viewport */
+    padding: 20px; /* Add padding to prevent content cutoff */
+    box-sizing: border-box;
+    position: relative; /* To position the elements absolutely within it */
+    background-color: hsl(0, 0%, 83%); /* Background color */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Align items at the start to prevent cutoff */
+    overflow-y: auto; /* Enable vertical scrolling if needed */
+}
+
+.intro-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center the intro-text vertically */
+    height: 100%; /* Use full height of the container */
+}
+
+.intro-text {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.scenario-container {
+    text-align: center;
+    padding-top: 20px;
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align items at the start */
+}
+
+.home-card {
+    width: 280px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto; /* Ensure the card is centered */
+}
+
+.scenario-text {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+    margin-top: 20px; /* Add margin to bring it down towards the center */
+}
+
+.map-card-container {
+    text-align: center;
+    padding-top: 20px; /* Adjust the padding as needed */
+    position: relative; /* Needed for absolute positioning of action-buttons */
+    height: 100%; /* Use full height of the container */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Space out elements */
+}
+
+.card {
+    width: 280px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto; /* Ensure the card is centered horizontally */
+    position: absolute; /* Position the card absolutely */
+    top: 30%; /* Position 50% from the top */
+    left: 50%; /* Position 50% from the left */
+    transform: translate(-50%, -50%); /* Center the card */
+}
+
+.map-text {
+    font-size: 2em;
+    color: #333;
+    margin-top: 10px;
+    text-align: center;
+    width: 60%; /* Adjust this to the desired width */
+    position: absolute; /* Absolute positioning */
+    top: 55%; /* Adjust as needed */
+    left: 50%; /* Adjust as needed */
+    transform: translate(-50%, -50%); /* Center the text */
+    z-index: 10; /* Ensure it is above other elements */
+}
+
+
+.scenario-image, .map-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the card fully */
+    border-radius: 10px;
+}
+
+.menu-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000; /* Ensure it's on top of other elements */
+}
+
+.menu-icon-bars {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.menu-icon-bars::before,
+.menu-icon-bars::after,
+.menu-icon-bars div {
+    content: '';
+    width: 70%;
+    height: 4px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 2px;
+}
+
+.dropdown-menu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #2e2e2e;
+    border: 1px solid #444;
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.dropdown-menu a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.dropdown-menu a:hover {
+    background-color: #444;
+}
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+.popup-box {
+    background: #fff;
+    width: 85%;
+    height: 85%;
     padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.popup-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.popup-text {
+    display: none;
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.popup-text.active {
+    display: block;
+}
+
+.icon-container {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    grid-template-rows: repeat(2, 1fr);    /* 2 rows */
+    gap: 20px;
+}
+
+.icon {
+    width: 70px; /* Increased size */
+    height: 70px; /* Increased size */
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.icon:hover {
+    transform: scale(1.1);
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjusts columns automatically */
+    gap: 20px;
+    width: 90%; /* Adjust the width to fit within the main content area */
+    margin: 20px auto; /* Added margin to ensure cards are not cut off */
+}
+
+.card-slot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    max-width: 280px;  /* Maximum width to fit more cards in the grid */
+    max-height: 350px; /* Maximum height accordingly */
+    object-fit: cover;
+}
+
+.loading-container {
+    text-align: center;
+    position: relative; /* Needed for absolute positioning of action-buttons */
+    height: 100%; /* Use full height of the container */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Space out elements */
+    padding-top: 20px; /* Adjust padding to bring down the scenario text */
+}
+
+
+.loading-image {
+    width: 280px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto; /* Ensure the card is centered horizontally */
+    position: absolute; /* Position the card absolutely */
+    top: 30%; /* Position 50% from the top */
+    left: 50%; /* Position 50% from the left */
+    transform: translate(-50%, -50%); /* Center the card */
+    border-radius: 10px;
+}
+
+.loading-text {
+    font-size: 2em;
+    color: #333;
+    margin-top: 10px;
+    text-align: center;
+    width: 60%; /* Adjust this to the desired width */
+    position: absolute; /* Absolute positioning */
+    top: 55%; /* Adjust as needed */
+    left: 50%; /* Adjust as needed */
+    transform: translate(-50%, -50%); /* Center the text */
+    z-index: 10; /* Ensure it is above other elements */
+}
+
+.card-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+.card-popup-box {
+    width: 560px;
+    height: 700px;
+    perspective: 1000px; /* Enables 3D space for the flip effect */
+}
+
+.card-popup-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card-popup-front, .card-popup-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     box-sizing: border-box;
 }
+
+.card-popup-front {
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.card-popup-front img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.card-popup-back {
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    transform: rotateY(180deg); /* Hide the back initially */
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.back-image-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 280px;
+    height: 350px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.card-popup-back img {
+    width: 280px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card-description {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    height: 40%; /* Take up the bottom half */
+    overflow: auto;
+    background: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.meta-description {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    max-width: 210px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.card-popup-box.flipped .card-popup-inner {
+    transform: rotateY(180deg);
+}
+
+
+
+
+
