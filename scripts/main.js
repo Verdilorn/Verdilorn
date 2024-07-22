@@ -147,8 +147,8 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         
         scenarioImage.src = scenario.image;
-        typeWriter(scenario.text, scenarioText, 22); // Speed set to 22ms per character for fast effect
-    
+        currentTypewriterInterval = typeWriter(scenario.text, scenarioText, 22); // Speed set to 22ms per character for fast effect
+        
         if (!collectedCards.includes(scenario.image)) {
             collectedCards.push(scenario.image);
             updateCollectionPage(getCardIndexByImage(scenario.image));
@@ -169,7 +169,6 @@ document.addEventListener("DOMContentLoaded", function() {
             restartButton.style.display = 'none';
         }
     }
-    
     
 
     startButton.addEventListener('click', function() {
@@ -413,30 +412,22 @@ function getCardIndexByImage(imageSrc) {
    
 
 
-// Function to display text with typewriter effect
+    // Function to display text with typewriter effect
 
-let currentTypewriterInterval = null;
+    let currentTypewriterInterval = null;
 
-function typeWriter(text, element, speed = 50) {
-    let i = 0;
-    element.innerHTML = "";
-
-    // Clear any existing interval to prevent overlapping
-    if (currentTypewriterInterval) {
-        clearTimeout(currentTypewriterInterval);
-    }
-
-    function type() {
-        if (i < text.length) {
-            element.innerHTML += text.charAt(i);
-            i++;
-            currentTypewriterInterval = setTimeout(type, speed);
+    function typeWriter(text, element, speed = 50) {
+        let i = 0;
+        element.innerHTML = "";
+        function type() {
+            if (i < text.length) {
+                element.innerHTML += text.charAt(i);
+                i++;
+                currentTypewriterInterval = setTimeout(type, speed);
+            }
         }
+        type();
     }
-
-    type();
-}
-
 
 
    
