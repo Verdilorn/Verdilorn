@@ -412,22 +412,30 @@ function getCardIndexByImage(imageSrc) {
    
 
 
-    // Function to display text with typewriter effect
+// Function to display text with typewriter effect
 
-    let currentTypewriterInterval = null;
+let currentTypewriterInterval = null;
 
-    function typeWriter(text, element, speed = 50) {
-        let i = 0;
-        element.innerHTML = "";
-        function type() {
-            if (i < text.length) {
-                element.innerHTML += text.charAt(i);
-                i++;
-                currentTypewriterInterval = setTimeout(type, speed);
-            }
-        }
-        type();
+function typeWriter(text, element, speed = 50) {
+    let i = 0;
+    element.innerHTML = "";
+
+    // Clear any existing interval to prevent overlapping
+    if (currentTypewriterInterval) {
+        clearTimeout(currentTypewriterInterval);
     }
+
+    function type() {
+        if (i < text.length) {
+            element.innerHTML += text.charAt(i);
+            i++;
+            currentTypewriterInterval = setTimeout(type, speed);
+        }
+    }
+
+    type();
+}
+
 
 
    
