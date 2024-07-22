@@ -147,8 +147,8 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         
         scenarioImage.src = scenario.image;
-        currentTypewriterInterval = typeWriter(scenario.text, scenarioText, 22); // Speed set to 22ms per character for fast effect
-        
+        typeWriter(scenario.text, scenarioText, 22); // Speed set to 22ms per character for fast effect
+    
         if (!collectedCards.includes(scenario.image)) {
             collectedCards.push(scenario.image);
             updateCollectionPage(getCardIndexByImage(scenario.image));
@@ -169,6 +169,7 @@ document.addEventListener("DOMContentLoaded", function() {
             restartButton.style.display = 'none';
         }
     }
+    
     
 
     startButton.addEventListener('click', function() {
